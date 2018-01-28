@@ -4,9 +4,10 @@
 ; takes a single positive integer and return true if the number is a prime and false 
 ; otherwise. Call the function decide-prime
 
-; from: https://stackoverflow.com/questions/3345626/finding-a-prime-number-in-scheme-using-natural-recursion
+; adapt from: https://stackoverflow.com/questions/3345626/finding-a-prime-number-in-scheme-using-natural-recursion
+; cond: (condition) https://docs.racket-lang.org/reference/if.html
 
-(define (prime? m)
+(define (decide-prime m)
     ; insert a loom function(checking if/not can be devide by [2 ~ m-1])
     (define (step a b)
         (cond
@@ -20,9 +21,9 @@
         (step m (- m 1))))
 
 
-(prime? 1)
-(prime? 2)
-(prime? 3)
-(prime? 4)
-(prime? 5)
-(prime? 6)
+(decide-prime 1)
+(decide-prime 2)
+(decide-prime 3)
+(decide-prime 4)
+(decide-prime 5)
+(decide-prime 6)
