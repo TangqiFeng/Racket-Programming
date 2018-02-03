@@ -9,9 +9,21 @@
 ; > (rcycle (list 1 2 3 4 5))
 ; '(5 1 2 3 4)
 
-; append command: https://docs.racket-lang.org/reference/pairs.html#%28def._%28%28quote._~23~25kernel%29._append%29%29
+; first, define a reverse function
+(define (rev l)
+    (define (rev-aux l m)
+        (if (null? l)
+            m
+            (rev-aux (cdr l) (cons (car l) m))))
+    
+    (rev-aux l null))
+
+(rev (list 1 2 3 4 5))
+
+; lcycle function: (1 2 3 4 5)
+; => (1)(2 3 4 5) => (1)(5 4 3 2)
+; => (2 3 4 5 1)
 (define (lcycle l)
-    (append (cdr l) (cons (car l) null)))
+    (rev (cons (car l) (rev (cdr l)))))
 
 (lcycle (list 1 2 3 4 5))
-
