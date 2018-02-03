@@ -27,3 +27,4 @@
 (decide-prime 4)
 (decide-prime 5)
 (decide-prime 6)
+(decide-prime 7)
