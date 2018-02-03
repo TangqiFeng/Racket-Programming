@@ -27,3 +27,11 @@
     (rev (cons (car l) (rev (cdr l)))))
 
 (lcycle (list 1 2 3 4 5))
+
+; rcycle function: (1 2 3 4 5)
+; => (5 4 3 2 1) => (5)(4 3 2 1)
+; => (5 1 2 3 4)
+(define (rcycle l)
+    (cons (car (rev l))(rev (cdr (rev l)))))
+
+(rcycle (list 1 2 3 4 5))
