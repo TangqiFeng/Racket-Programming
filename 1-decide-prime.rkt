@@ -8,7 +8,7 @@
 ; cond: (condition) https://docs.racket-lang.org/reference/if.html
 
 (define (decide-prime m)
-    ; insert a loom function(checking if/not can be devide by [2 ~ m-1])
+    ; insert a loop function(checking if/not can be devide by [2 ~ m-1])
     (define (step a b)
         (cond
             ((= b 1) #t)
