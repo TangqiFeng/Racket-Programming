@@ -27,3 +27,14 @@
 (decide-prime 5) ;#t
 (decide-prime 6) ;#f
 (decide-prime 7) ;#t
+
+
+; cond: (condition) https://docs.racket-lang.org/reference/if.html
+; cond and if do the same thing by different ways.
+
+; (define (step a b)
+;          (cond
+;              ((= b 1) #t)
+;              (else (if(eq? (modulo a b) 0)
+;                  #f
+;                  (step a (- b 1))))))
