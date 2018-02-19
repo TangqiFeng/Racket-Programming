@@ -18,11 +18,26 @@
 ; test sum
 (sum (list 1 2 3 4))
 
-(define (sublsum l)
+; function 'combinations' return a list of all combinations of elements in the input list
+; if sum() each element is 0, then leave it, otherwise put null instead
+(define (cal-sublsum l)
     (map (lambda (li) 
         (if (= 0(sum li))
             li
             null))
         (cdr (combinations l)))) ; remove first '()
 
+; remove all '() from a list 
+(define (remove-blank lst)
+    (if (null? lst)
+        null
+        (if (null? (car lst))
+            (remove-blank (cdr lst))
+            (cons (car lst) (remove-blank (cdr lst))))))
+
+; this function combines three functions above
+(define (sublsum ll)
+    (remove-blank (cal-sublsum ll)))
+    
 (sublsum (list 1 2 3 4 -5))
+(sublsum (list 1 2 3 4 5))
