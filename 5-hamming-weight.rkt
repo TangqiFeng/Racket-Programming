@@ -5,6 +5,7 @@
 ; > (hamming-weight (list 1 0 1 0 1 1 1 0))
 ; 5
 
+; remove zeros
 (define (rmZero l)
     (if (null? l)
         null
@@ -12,6 +13,7 @@
             (rmZero (cdr l))
             (cons (car l) (rmZero (cdr l))))))
 
+; use length function to get the number of 1s
 (define (hamming-weight l)
     (length (rmZero l)))
 
