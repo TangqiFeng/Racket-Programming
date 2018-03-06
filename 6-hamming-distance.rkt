@@ -14,8 +14,15 @@
             (compare (cdr m) (cdr n))
             (cons 1 (compare (cdr m) (cdr n))))))
 
+; count length of list
+; same as (length list)
+(define (count l)
+    (if (null? l)
+        0
+        (+ 1 (count (cdr l)))))
+
 (define (hamming-distance m n)
-    (length (compare m n)))
+    (count (compare m n)))
 
 
 (hamming-distance (list 1 0 1 0 1 1 1 0) (list 1 1 1 1 0 0 0 0))
