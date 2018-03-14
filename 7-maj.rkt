@@ -22,9 +22,12 @@
         (car l)
         (car (cdr (cdr l)))))
 
+; cobine two functions above
+(define (maj x y z)
+    (if (null? x)     ; recursion
+        null
+        (cons (cal (newList x y z)) (maj (cdr x) (cdr y) (cdr z)))))
 
-; function
-; (define (maj x y z)
-;     ())
+; (cal (newList(list 0 0 0) (list 1 1 0) (list 0 0 1))) ; for testing
 
-(cal (newList(list 0 0 0) (list 1 1 0) (list 0 0 1)))
+(maj (list 0 0 0 0 1 1 1 1) (list 0 0 1 1 0 0 1 1) (list 0 1 0 1 0 1 0 1))
