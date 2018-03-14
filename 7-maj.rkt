@@ -8,7 +8,7 @@
 
 ; function get sublist, take first char from x, y & z.
 ; e.g. x => 1 0 0   y => 1 0 1   z => 0 1 0
-;      subList => 1 1 0
+;     subList => 1 1 0
 (define (newList x y z)
     (cons (car x) (cons (car y) (cons (car z) null))))
 
@@ -28,6 +28,14 @@
         null
         (cons (cal (newList x y z)) (maj (cdr x) (cdr y) (cdr z)))))
 
-; (cal (newList(list 0 0 0) (list 1 1 0) (list 0 0 1))) ; for testing
-
 (maj (list 0 0 0 0 1 1 1 1) (list 0 0 1 1 0 0 1 1) (list 0 1 0 1 0 1 0 1))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; All functions above can be writen into one as this:
+;; (define (maj x y z)
+;;     (if (null? x)  ; (x, y & z have same size)
+;;         null
+;;         (if (= (car x) (car y)) ; if x is 0 , take ele from z, otherwise take from y
+;;             (cons (car x) (maj (cdr x) (cdr y) (cdr z)))
+;;             (cons (car z) (maj (cdr x) (cdr y) (cdr z))))))
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
