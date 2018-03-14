@@ -35,7 +35,7 @@
 ;; (define (maj x y z)
 ;;     (if (null? x)  ; (x, y & z have same size)
 ;;         null
-;;         (if (= (car x) (car y)) ; if x is 0 , take ele from z, otherwise take from y
+;;         (if (= (car x) (car y)) ; if x=y , whatever 0/1, result is x, otherwise is z
 ;;             (cons (car x) (maj (cdr x) (cdr y) (cdr z)))
 ;;             (cons (car z) (maj (cdr x) (cdr y) (cdr z))))))
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
