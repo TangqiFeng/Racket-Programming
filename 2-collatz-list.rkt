@@ -13,7 +13,7 @@
 ; > (collatz-list 2)         '(2 1)
 
 (define (collatz-list m)
-    (if (eq? m 1)     ; m = 1 is the terminal condition 
+    (if (= m 1)     ; m = 1 is the terminal condition 
         (cons m null)
         (if (eq? (modulo m 2) 0)  ; check n is/not an even number
             (cons m (collatz-list (/ m 2)))
