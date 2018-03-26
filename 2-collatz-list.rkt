@@ -15,7 +15,7 @@
 (define (collatz-list m)
     (if (= m 1)     ; m = 1 is the terminal condition 
         (cons m null)
-        (if (eq? (modulo m 2) 0)  ; check n is/not an even number
+        (if (= (modulo m 2) 0)  ; check n is/not an even number
             (cons m (collatz-list (/ m 2)))
             (cons m (collatz-list (+ 1 (* 3 m)))))))
 
