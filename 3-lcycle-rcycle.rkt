@@ -18,7 +18,7 @@
     
     (rev-aux l null))
 
-(rev (list 1 2 3 4 5))
+; (rev (list 1 2 3 4 5)) => '(5 4 3 2 1)
 
 ; lcycle function: (1 2 3 4 5)
 ; => (1)(2 3 4 5) => (1)(5 4 3 2)
@@ -26,9 +26,9 @@
 (define (lcycle l)
     (if (null? l)        ;check l is null
         null
-        (if (pair? l)    ;check l is not pair
-            (rev (cons (car l) (rev (cdr l))))
-            (car l))))
+        (if (null? (cdr l))    ;check l is not the last element
+            (car l)
+            (rev (cons (car l) (rev (cdr l)))))))
 
 (lcycle (list 1 2 3 4 5))
 
@@ -38,8 +38,8 @@
 (define (rcycle l)
     (if (null? l)        ;check l is null
         null
-        (if (pair? l)    ;check l is not pair
-            (cons (car (rev l))(rev (cdr (rev l))))
-            (car l))))
+        (if (null? (cdr l))    ;check l is not the last element
+            (car l)
+            (cons (car (rev l))(rev (cdr (rev l)))))))
 
 (rcycle (list 1 2 3 4 5))
