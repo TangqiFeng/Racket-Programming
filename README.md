@@ -13,7 +13,7 @@ These tasks is completed in the [Racket programming language](https://racket-lan
 
 * folder(.vscode) conrains 'tasks.json', which is a tool for 'VS Code' to execute the racket code. (for example, type 'Ctrl + Shift + B' to run the code automatically)
 
-* there ate 10 .rkt files, which is the sulutions matchs [Racket programming tasks](https://github.com/TangqiFeng/Racket-Programming/blob/brench-for-upload-file/tasks.pdf) one by one.
+* there are 10 .rkt files, which is the sulutions matchs [Racket programming tasks](https://github.com/TangqiFeng/Racket-Programming/blob/brench-for-upload-file/tasks.pdf) one by one.
 
   It named like: NO-Name.rkt --> 'No' is the task number, 'Name' is the main function name of such task.
   
